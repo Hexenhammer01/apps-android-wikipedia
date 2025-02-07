@@ -45,7 +45,8 @@ val paginationButton = listOf(
 
 val continueButton = listOf(
     MaterialButton::class.java,
-    "fragment_onboarding_forward_button"
+    "fragment_onboarding_forward_button",
+    "onboarding_get_started"
 )
 
 
