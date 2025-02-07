@@ -30,7 +30,6 @@ val addLanguageFrame = listOf(
     MaterialButton::class.java,
     "addLanguageButton",
     "onboarding_multilingual_add_language_text"
-
 )
 
 val skipButton = listOf(
@@ -47,7 +46,6 @@ val paginationButton = listOf(
 val continueButton = listOf(
     MaterialButton::class.java,
     "fragment_onboarding_forward_button"
-
 )
 
 
