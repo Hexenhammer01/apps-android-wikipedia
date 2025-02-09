@@ -3,6 +3,7 @@ package org.wikipedia.homeworks.homework03
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.appcompat.widget.AppCompatImageView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
 import org.wikipedia.R
@@ -10,8 +11,9 @@ import org.wikipedia.views.AppTextView
 
 
 val wikiImage = listOf(
-    ImageView::class.java,
-    "imageViewCentered"
+    AppCompatImageView::class.java,
+    "imageViewCentered",
+    R.drawable.illustration_onboarding_explore
 )
 
 val primaryOnbordingText = listOf(
@@ -47,6 +49,12 @@ val continueButton = listOf(
     MaterialButton::class.java,
     "fragment_onboarding_forward_button",
     "onboarding_get_started"
+)
+
+val secondScreen = listOf(
+    ImageView::class.java,
+    "imageViewCentered",
+    R.drawable.illustration_onboarding_explore
 )
 
 
