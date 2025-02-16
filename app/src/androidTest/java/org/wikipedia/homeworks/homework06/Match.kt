@@ -15,3 +15,11 @@ class ColorM(private val expectedColors: Colors) : TypeSafeMatcher<Shape>() {
         return item.color == expectedColors
     }
 }
+class DlinnaMatcher(val min: Float, val max: Float) : TypeSafeMatcher<Shape>() {
+    override fun describeTo(description: Description) {
+        description.appendText("диапозон от $min до $max")
+    }
+    override fun matchesSafely(item: Shape): Boolean {
+        return item.sideLength in min..max
+    }
+}
