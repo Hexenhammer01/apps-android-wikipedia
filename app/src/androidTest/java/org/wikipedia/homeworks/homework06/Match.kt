@@ -15,4 +15,3 @@ class ColorM(private val expectedColors: Colors) : TypeSafeMatcher<Shape>() {
         return item.color == expectedColors
     }
 }
-fun hasColor(expectedColors: Colors) = ColorM(expectedColors)
