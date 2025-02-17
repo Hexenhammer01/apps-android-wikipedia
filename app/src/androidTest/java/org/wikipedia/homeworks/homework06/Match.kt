@@ -1,6 +1,7 @@
 package org.wikipedia.homeworks.homework06
 
 import org.hamcrest.Description
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
 
 
@@ -15,6 +16,8 @@ class ColorM(private val expectedColors: Color) : TypeSafeMatcher<Shape>() {
         return item.color == expectedColors
     }
 }
+
+
 class DlinnaMatcher(val min: Float, val max: Float) : TypeSafeMatcher<Shape>() {
     override fun describeTo(description: Description) {
         description.appendText("диапозон от $min до $max")
@@ -24,6 +27,28 @@ class DlinnaMatcher(val min: Float, val max: Float) : TypeSafeMatcher<Shape>() {
     }
 }
 
+class OtrizatelnayaStoronaMatcher : TypeSafeMatcher<Shape>() {
+    override fun describeTo(description: Description) {
+        description.appendText("есть отрицательная сторона ")
+    }
+    override fun matchesSafely(item: Shape): Boolean {
+        return item.sideLength >= 0
+    }
+}
+
+class OtrizatelnoeKovichestvoStoronMatcher : TypeSafeMatcher<Shape>() {
+    override fun describeTo(description: Description) {
+        description.appendText("отрицательное количество сторон")
+    }
+    override fun matchesSafely(item: Shape): Boolean {
+        return item.sides >= 0
+    }
+}
+
+fun isColor (expectedColors: Color) = ColorM(expectedColors)
+fun isDlinna(min: Float, max: Float) = DlinnaMatcher(min, max)
+fun isOtrizatelnoeKovichestvoStoronMatcher() = OtrizatelnoeKovichestvoStoronMatcher()
+fun isOtrizatelnayaStoronaMatcher() = OtrizatelnayaStoronaMatcher()
 
 enum class Color { RED, BLUE, GREEN, YELLOW, BLACK, WHITE }
 
@@ -36,3 +61,10 @@ val shapes = listOf(
     Shape(25f, 12, Color.YELLOW), Shape(30f, 14, Color.BLACK), Shape(35f, 16, Color.WHITE),
     Shape(40f, 18, Color.RED), Shape(50f, 20, Color.BLUE)
 )
+val filter = shapes.filter { shape ->
+    allOf(
+        isDlinna(456f, -3453f),
+        isOtrizatelnoeKovichestvoStoronMatcher(),
+        isOtrizatelnayaStoronaMatcher()
+        ).matches(shape)
+}
