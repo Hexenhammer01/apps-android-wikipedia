@@ -1,0 +1,40 @@
+package org.wikipedia.homeworks.homework07
+
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import com.kaspersky.kaspresso.screens.KScreen
+import io.github.kakaocup.kakao.image.KImageView
+import io.github.kakaocup.kakao.recycler.KRecyclerView
+import org.wikipedia.R
+import org.wikipedia.feed.view.FeedView
+
+
+object ExploreScreen : KScreen<ExploreScreen>() {
+    override val layoutId = R.layout.fragment_feed
+    override val viewClass = FeedView::class.java
+
+    val toolbarTitle = KImageView {
+        withId(R.id.main_toolbar_wordmark)
+    }
+
+    val items = KRecyclerView(
+        builder = {
+            withId(R.id.feed_view)
+        },
+        itemTypeBuilder = {
+            itemType(::SerchCardViewItem)
+            itemType(::AnnouncementViewItem)
+            itemType(::DayHeaderCardView)
+        },
+        builder = {
+            withId(R.id.view_featured_article_card_header)
+        },
+        itemTypeBuilder = {
+            itemType(::)
+        }
+
+
+    )
+
+
+
+}

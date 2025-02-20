@@ -60,9 +60,13 @@ fun isOtrizatelnayaStoronaMatcher() = OtrizatelnayaStoronaMatcher()
 
 val filteredShapes = shapes.filter { shape ->
     allOf(
-        isDlinna(-345f, 3453f),
+        isDlinna(
+            min = 1f,
+            max =1110f
+        ),
         isOtrizatelnoeKovichestvoStoronMatcher(),
         isOtrizatelnayaStoronaMatcher(),
+        isColor(Color.RED)
     ).matches(shape)
 }
 
