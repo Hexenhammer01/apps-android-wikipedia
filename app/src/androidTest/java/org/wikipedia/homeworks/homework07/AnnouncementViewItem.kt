@@ -10,17 +10,17 @@ import org.hamcrest.Matcher
 import org.wikipedia.R
 
 class AnnouncementViewItem(matcher: Matcher<View>) : KRecyclerItem<AnnouncementViewItem>(matcher){
-    val annoncementImage = KImageView{
+    val annoncementImage = KImageView(matcher){
         withId(R.id.view_announcement_header_image)
     }
-    val announcemenText = KTextView{
+    val announcemenText = KTextView(matcher){
         withId(R.id.view_announcement_text)
         withText(R.string.feed_configure_onboarding_text)
     }
-    val announcementActionPositive = KButton{
+    val announcementActionPositive = KButton(matcher){
         withId(R.id.view_announcement_action_positive)
     }
-    val announcementActionNegative = KButton{
+    val announcementActionNegative = KButton(matcher){
         withId(R.id.view_announcement_action_negative)
     }
 }

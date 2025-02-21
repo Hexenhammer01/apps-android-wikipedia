@@ -8,7 +8,7 @@ import org.wikipedia.R
 import org.wikipedia.feed.dayheader.DayHeaderCardView
 
 class DayHeaderCardView(matcher: Matcher<View>) : KRecyclerItem<DayHeaderCardView>(matcher) {
-    val dayHeaderText = KTextView{
+    val dayHeaderText = KTextView(matcher){
         withId(R.id.day_header_text)
     }
 }

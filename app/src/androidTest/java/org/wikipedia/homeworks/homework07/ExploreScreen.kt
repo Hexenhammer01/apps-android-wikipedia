@@ -1,6 +1,5 @@
 package org.wikipedia.homeworks.homework07
 
-import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerView
@@ -24,12 +23,8 @@ object ExploreScreen : KScreen<ExploreScreen>() {
             itemType(::SerchCardViewItem)
             itemType(::AnnouncementViewItem)
             itemType(::DayHeaderCardView)
-        },
-        builder = {
-            withId(R.id.view_featured_article_card_header)
-        },
-        itemTypeBuilder = {
-            itemType(::)
+            itemType (::TopReadCardView)
+            itemType (::NewsCardsView)
         }
 
 
