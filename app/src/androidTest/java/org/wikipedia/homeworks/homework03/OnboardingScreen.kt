@@ -18,8 +18,7 @@ object OnboardingScreen :KScreen<OnboardingScreen>() {
 
     val wikiImage = listOf(
         AppCompatImageView::class.java,
-        "imageViewCentered",
-        R.drawable.illustration_onboarding_explore
+        "imageViewCentered"
     )
 
     val primaryOnbordingText = listOf(

@@ -9,7 +9,9 @@ import org.wikipedia.homeworks.homework07.ExploreScreen
 import org.wikipedia.homeworks.homework07.ListCardList
 import org.wikipedia.homeworks.homework07.SerchCardViewItem
 import org.wikipedia.homeworks.homework07.TopReadCardView
+import org.wikipedia.homeworks.homework08.Items.OnbordingFrameItem
 import org.wikipedia.main.MainActivity
+import org.wikipedia.homeworks.homework08.Exp.Onbording
 
 class ExploreScreenTests : TestCase() {
 
@@ -37,6 +39,55 @@ class ExploreScreenTests : TestCase() {
                     cardListContainerItems.childAt<ListCardList>(1) {
                         viewListCardItemImage.isDisplayed()
                     }
+                }
+            }
+        }
+    }
+
+    @Test
+    fun wikiLogoCheck(){
+        run {
+            step("Отображение логотипа"){
+                Onbording.items1.childAt<OnbordingFrameItem>(0){
+                    wikiImageCentered.isDisplayed()
+                }
+            }
+        }
+    }
+    @Test
+    fun secondPage(){
+        run{
+            step("Перелистывание"){
+                Onbording.continueButton.click()
+            }
+        }
+    }
+    @Test
+    fun skipButton(){
+        run{
+            step("Пропустить"){
+                Onbording.skipButton.click()
+            }
+        }
+    }
+    @Test
+    fun startButton(){
+        run {
+            step("Нажатие старт"){
+                Onbording.continueButton.click()
+                Onbording.continueButton.click()
+                Onbording.continueButton.click()
+                Onbording.getStartButton.isDisplayed()
+                Onbording.getStartButton.click()
+            }
+        }
+    }
+    @Test
+    fun addLanguage(){
+        run{
+            step("Нажатие Добавить язык"){
+                Onbording.items1.childAt<OnbordingFrameItem>(0){
+                    addButton.click()
                 }
             }
         }
