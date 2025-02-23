@@ -1,6 +1,7 @@
 package org.wikipedia.homeworks.homework07
 
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
@@ -20,8 +21,9 @@ class TopReadCardView(matcher: Matcher<View>) : KRecyclerItem<CardHeaderView>(ma
         withId(R.id.view_list_card_header_menu)
     }
     val cardListContainerItems = KRecyclerView(
+        parent = matcher,
         builder = {
-            withId(R.id.view_list_card_list_container)
+            withId(R.id.view_list_card_list)
         },
         itemTypeBuilder = {
             itemType(::ListCardList)
