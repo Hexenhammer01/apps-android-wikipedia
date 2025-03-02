@@ -12,6 +12,7 @@ import org.wikipedia.homeworks.homework07.NewsCardsView
 import org.wikipedia.homeworks.homework07.NewsItemViewsItem
 import org.wikipedia.homeworks.homework07.NewsScreen
 import org.wikipedia.homeworks.homework07.NewsScreenTtem
+import org.wikipedia.homeworks.homework07.SecObj
 import org.wikipedia.homeworks.homework07.TopReadCardView
 import org.wikipedia.main.MainActivity
 
@@ -45,8 +46,9 @@ class Script : TestCase() {
                             title.click()
                         }
             }
-
-
+            step("Проверяем, что отображается элемент с ID page_web_view") {
+                SecObj.pageWebView.isVisible()
+            }
         }
     }
 }
