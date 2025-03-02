@@ -9,9 +9,9 @@ import org.wikipedia.homeworks.homework07.ExploreScreen
 import org.wikipedia.homeworks.homework07.ListCardList
 import org.wikipedia.homeworks.homework07.SerchCardViewItem
 import org.wikipedia.homeworks.homework07.TopReadCardView
-import org.wikipedia.homeworks.homework08.Items.OnbordingFrameItem
 import org.wikipedia.main.MainActivity
 import org.wikipedia.homeworks.homework08.Exp.Onbording
+import org.wikipedia.homeworks.homework08.Items.OnbordingFrameItem as OnbordingFrameItem
 
 class ExploreScreenTests : TestCase() {
 
@@ -48,7 +48,7 @@ class ExploreScreenTests : TestCase() {
     fun wikiLogoCheck(){
         run {
             step("Отображение логотипа"){
-                Onbording.items1.childAt<OnbordingFrameItem>(0){
+                Onbording.items1.childAt<OnbordingFrameItem>( 0){
                     wikiImageCentered.isDisplayed()
                 }
             }

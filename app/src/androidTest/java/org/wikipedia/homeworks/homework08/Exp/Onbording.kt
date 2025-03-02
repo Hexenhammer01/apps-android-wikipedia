@@ -2,9 +2,11 @@ package org.wikipedia.homeworks.homework08.Exp
 
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.common.views.KView
+import io.github.kakaocup.kakao.pager2.KViewPager2
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KButton
 import org.wikipedia.R
+import org.wikipedia.homeworks.homework08.Items.LanguageViewItem
 import org.wikipedia.homeworks.homework08.Items.OnbordingFrameItem
 
 object Onbording: KScreen<Onbording>() {
@@ -25,7 +27,7 @@ object Onbording: KScreen<Onbording>() {
     val getStartButton = KButton{
         withId(R.id.fragment_onboarding_done_button)
     }
-    val items1 = KRecyclerView(
+    val items1 = KViewPager2(
         builder = {
             withId(R.id.fragment_pager)
         },
