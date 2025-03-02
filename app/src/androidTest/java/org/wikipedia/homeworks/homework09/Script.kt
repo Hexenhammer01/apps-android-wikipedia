@@ -47,7 +47,7 @@ class Script : TestCase() {
                         }
             }
             step("Проверяем, что отображается элемент с ID page_web_view") {
-                SecObj.pageWebView.isVisible()
+                SecObj.page.isVisible()
             }
         }
     }

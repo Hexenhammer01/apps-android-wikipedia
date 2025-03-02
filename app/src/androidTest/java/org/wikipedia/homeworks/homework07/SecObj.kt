@@ -12,7 +12,7 @@ object SecObj : KScreen <SecObj>() {
     val title = KTextView {
         withId(R.id.articleTitle)
     }
-    val pageWebView = KView {
+    val page = KView {
         withId(R.id.page_web_view)
     }
 
