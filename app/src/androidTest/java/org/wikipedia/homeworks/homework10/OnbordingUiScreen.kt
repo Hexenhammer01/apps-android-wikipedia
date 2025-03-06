@@ -16,7 +16,7 @@ object OnbordingUiScreen: UiScreen<OnbordingUiScreen>() {
     val title = UiTextView{
         withId(this@OnbordingUiScreen.packageName,"primaryTextView")
     }
-    val secTitle = UiTextView{
+    val underTitle = UiTextView{
         containsText("We’ve found the following on your device:")
 
     }
@@ -28,5 +28,11 @@ object OnbordingUiScreen: UiScreen<OnbordingUiScreen>() {
     }
     val continueButton = UiButton{
         containsText("Continue")
+    }
+    val secTitle = UiTextView{
+        containsText("New ways to explore")
+    }
+    val underSecTitle = UiTextView{
+        withId(this@OnbordingUiScreen.packageName,"secondaryTextView")
     }
 }
