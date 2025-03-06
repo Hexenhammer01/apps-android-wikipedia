@@ -1,9 +1,14 @@
 package org.wikipedia.homeworks.homework10
 
 import com.kaspersky.components.kautomator.component.common.views.UiView
+import com.kaspersky.components.kautomator.component.scroll.UiScrollView
 import com.kaspersky.components.kautomator.component.text.UiButton
 import com.kaspersky.components.kautomator.component.text.UiTextView
 import com.kaspersky.components.kautomator.screen.UiScreen
+import io.github.kakaocup.kakao.common.views.KView
+import io.github.kakaocup.kakao.recycler.KRecyclerView
+import org.wikipedia.R
+import kotlin.concurrent.thread
 
 
 object OnbordingUiScreen: UiScreen<OnbordingUiScreen>() {
@@ -34,5 +39,8 @@ object OnbordingUiScreen: UiScreen<OnbordingUiScreen>() {
     }
     val underSecTitle = UiTextView{
         withId(this@OnbordingUiScreen.packageName,"secondaryTextView")
+    }
+    val swipe = UiScrollView {
+        withId(this@OnbordingUiScreen.packageName,"scrollViewContainer" )
     }
 }

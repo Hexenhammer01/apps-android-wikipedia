@@ -5,6 +5,7 @@ import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.swipeRight
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.components.kautomator.component.common.actions.UiSwipeableActions
+import com.kaspersky.components.kautomator.component.switch.UiSwitchableActions
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -32,6 +33,10 @@ class OnbordingUiAutomatorTest : TestCase() {
                 image.isDisplayed()
                 secTitle.isDisplayed()
                 underSecTitle.isDisplayed()
+                swipe.swipeLeft()
+                runBlocking {
+                    delay(1000000)
+                }
             }
         }
     }
