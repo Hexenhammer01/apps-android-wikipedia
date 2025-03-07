@@ -19,25 +19,67 @@ class OnbordingUiAutomatorTest : TestCase() {
     val activityScenarioRule: ActivityScenarioRule<MainActivity> =
         ActivityScenarioRule(MainActivity::class.java)
 
-    @SuppressLint("CheckResult")
     @Test
-    fun onbordingTest() {
+    fun firstViewElements() {
         run {
-            OnbordingUiScreen {
-                image.isDisplayed()
-                title.isDisplayed()
-                underTitle.isDisplayed()
-                addLanguage.isDisplayed()
-                skipButton.isDisplayed()
-                continueButton.click()
-                image.isDisplayed()
-                secTitle.isDisplayed()
-                underSecTitle.isDisplayed()
-                swipe.swipeLeft()
-                runBlocking {
-                    delay(1000000)
-                }
+            step("Определение картинки") {
+                OnbordingUiScreen.image.isDisplayed()
+            }
+            step("Определение title") {
+                OnbordingUiScreen.title.isDisplayed()
+            }
+            step("Определение underTitle") {
+                OnbordingUiScreen.underTitle.isDisplayed()
+            }
+            step("Определение экрана добавления языка'") {
+                OnbordingUiScreen.addLanguage.isDisplayed()
+            }
+            step("Отображение кнопки Skip") {
+                OnbordingUiScreen.skipButton.isDisplayed()
+            }
+            step("Отображение кнопки продолжить") {
+                OnbordingUiScreen.continueButton.isDisplayed()
+            }
+        }
+    }
+
+    @Test
+    fun getStartButton() {
+        run {
+            step("Нажатие на продолжить ") {
+                OnbordingUiScreen.continueButton.click()
+            }
+//            step("Свайп") {
+//                OnbordingUiScreen.swipe.swipeRight()
+//            }
+            step("Нажатие на продолжить ") {
+                OnbordingUiScreen.continueButton.click()
+            }
+            step("Нажатие на продолжить ") {
+                OnbordingUiScreen.continueButton.click()
+            }
+            step("Отображение кнопки getStart ") {
+                OnbordingUiScreen.getStartedButton.isDisplayed()
+            }
+        }
+    }
+
+    @Test
+    fun secondViewElements() {
+        run {
+            step("Нажатие на продолжить") {
+                OnbordingUiScreen.continueButton.click()
+            }
+            step("Определение картинки") {
+                OnbordingUiScreen.image.isDisplayed()
+            }
+            step("Отображение title") {
+                OnbordingUiScreen.secTitle.isDisplayed()
+            }
+            step("Отображение sec under title") {
+                OnbordingUiScreen.underSecTitle.isDisplayed()
             }
         }
     }
 }
+
