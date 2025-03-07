@@ -81,5 +81,28 @@ class OnbordingUiAutomatorTest : TestCase() {
             }
         }
     }
+    @Test
+    fun thirdViewElements(){
+        run {
+            step("Нажатие на продолжить") {
+                OnbordingUiScreen.continueButton.click()
+            }
+            step("Нажатие на продолжить") {
+                OnbordingUiScreen.continueButton.click()
+            }
+            step("Отображение sec under title") {
+                OnbordingUiScreen.underSecTitle.isDisplayed()
+            }
+            step("Отображение картинки"){
+                OnbordingUiScreen.image.isDisplayed()
+            }
+            step("Отображение title"){
+                OnbordingUiScreen.thirdTitle.isDisplayed()
+            }
+            step("Отображение under title"){
+                OnbordingUiScreen.underTrhirdTitle.isDisplayed()
+            }
+        }
+    }
 }
 

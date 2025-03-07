@@ -37,6 +37,12 @@ object OnbordingUiScreen: UiScreen<OnbordingUiScreen>() {
     val secTitle = UiTextView{
         containsText("New ways to explore")
     }
+    val thirdTitle = UiTextView{
+        containsText("Reading lists with sync")
+    }
+    val underTrhirdTitle = UiTextView{
+        withId(this@OnbordingUiScreen.packageName,"secondaryTextView")
+    }
     val underSecTitle = UiTextView{
         withId(this@OnbordingUiScreen.packageName,"secondaryTextView")
     }
