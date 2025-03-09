@@ -47,7 +47,7 @@ object OnbordingUiScreen: UiScreen<OnbordingUiScreen>() {
         withId(this@OnbordingUiScreen.packageName,"secondaryTextView")
     }
     val swipe = UiScrollView {
-        withId(this@OnbordingUiScreen.packageName,"scrollView" )
+        withId(this@OnbordingUiScreen.packageName,"scrollViewContainer" )
     }
     val getStartedButton = UiButton{
         withText("Get started")

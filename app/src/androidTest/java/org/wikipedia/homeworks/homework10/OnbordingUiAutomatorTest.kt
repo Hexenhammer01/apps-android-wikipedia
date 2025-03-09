@@ -41,9 +41,9 @@ class OnbordingUiAutomatorTest : TestCase() {
             step("Нажатие на продолжить ") {
                 OnbordingUiScreen.continueButton.click()
             }
-//            step("Свайп") {
-//                OnbordingUiScreen.swipe.swipeRight()
-//            }
+            step("Свайп") {
+                OnbordingUiScreen.swipe.swipeLeft(0.7f)
+            }
             step("Нажатие на продолжить ") {
                 OnbordingUiScreen.continueButton.click()
             }
