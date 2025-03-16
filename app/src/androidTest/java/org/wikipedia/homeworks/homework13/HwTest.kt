@@ -1,7 +1,5 @@
 package org.wikipedia.homeworks.homework13
 
-import androidx.test.espresso.action.ViewActions.swipeLeft
-import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.web.webdriver.Locator
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
@@ -34,14 +32,36 @@ class HwTest : TestCase() {
                     }
                 }
             }
-            Side.view.perform(swipeLeft())
+//            Side.view.perform(swipeLeft())
 
             step("References") {
-                Side { webView { withElement(Locator.ID, "References") {
+                ArtScWe {
+                    web {
+                        withElement(Locator.ID, "References") {
                             scroll()
                             hasText("References")
                         }
                     }
                 }
-            } }
-        }}
+            }
+            step("Нажатие на 5") {
+                ArtScWe {
+                    web {
+                        withElement(
+                            Locator.XPATH, "//sup[@id='cite_ref-Universal_5-0']"
+                        ) {
+                            scroll()
+                            click()
+                        }
+                    }
+                }
+            }
+            step("сходится ли "){
+                BSheet{
+//                titleText.hasText("Reference")
+                refId.hasText("5.")
+            }
+        }
+    }
+}
+}
