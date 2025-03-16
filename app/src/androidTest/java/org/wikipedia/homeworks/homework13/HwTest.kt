@@ -1,10 +1,13 @@
 package org.wikipedia.homeworks.homework13
 
+import androidx.test.espresso.action.ViewActions.swipeLeft
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.web.webdriver.Locator
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
+import org.wikipedia.R
 import org.wikipedia.homeworks.homework03.OnboardingScreen
 import org.wikipedia.homeworks.homework07.ExploreScreen
 import org.wikipedia.homeworks.homework07.ListCardList
@@ -31,14 +34,14 @@ class HwTest : TestCase() {
                     }
                 }
             }
-            step(" References") {
-                Side {
-                    webView { withElement(Locator.ID, "References") {
+            Side.view.perform(swipeLeft())
+
+            step("References") {
+                Side { webView { withElement(Locator.ID, "References") {
                             scroll()
                             hasText("References")
                         }
                     }
                 }
-            }
-        }
-    }}
+            } }
+        }}

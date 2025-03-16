@@ -12,7 +12,7 @@ object OfflineCardViewItem : KScreen<OfflineCardViewItem>() {
     override val viewClass = null
 
     val offlineText = KTextView{
-        withText(R.id.view_offline_card_text)
+       // withText(R.id.view_offline_card_text)
     }
     val retryButton = KButton{
         withId(R.id.view_card_offline_button_retry)
