@@ -56,12 +56,15 @@ class HwTest : TestCase() {
                     }
                 }
             }
-            step("сходится ли "){
-                BSheet{
+            step("сходится ли ") {
+                BSheet {
 //                titleText.hasText("Reference")
-                refId.hasText("5.")
+                    refId.hasText("5.")
+                }
+            }
+            step("закрыть  окно") {
+                device.uiDevice.pressBack()
             }
         }
     }
-}
 }
