@@ -1,7 +1,10 @@
 package org.wikipedia.homeworks.homework08
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.kaspersky.components.alluresupport.withForcedAllureSupport
+import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
+import org.junit.After
 import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework03.OnboardingScreen
@@ -13,11 +16,16 @@ import org.wikipedia.main.MainActivity
 import org.wikipedia.homeworks.homework08.Exp.Onbording
 import org.wikipedia.homeworks.homework08.Items.OnbordingFrameItem as OnbordingFrameItem
 
-class ExploreScreenTests : TestCase() {
+class ExploreScreenTests : TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
 
     @get:Rule
     val activityScenarioRule: ActivityScenarioRule<MainActivity> =
         ActivityScenarioRule(MainActivity::class.java)
+
+//    @After
+//    fun tearDown() {
+//        device.files.pull("/sdcard/Documents/allure-results", "app/build ")
+//    }
 
     @Test
     fun simpleTest() {
@@ -45,35 +53,38 @@ class ExploreScreenTests : TestCase() {
     }
 
     @Test
-    fun wikiLogoCheck(){
+    fun wikiLogoCheck() {
         run {
-            step("Отображение логотипа"){
-                Onbording.items1.childAt<OnbordingFrameItem>( 0){
+            step("Отображение логотипа") {
+                Onbording.items1.childAt<OnbordingFrameItem>(0) {
                     wikiImageCentered.isDisplayed()
                 }
             }
         }
     }
+
     @Test
-    fun secondPage(){
-        run{
-            step("Перелистывание"){
+    fun secondPage() {
+        run {
+            step("Перелистывание") {
                 Onbording.continueButton.click()
             }
         }
     }
+
     @Test
-    fun skipButton(){
-        run{
-            step("Пропустить"){
+    fun skipButton() {
+        run {
+            step("Пропустить") {
                 Onbording.skipButton.click()
             }
         }
     }
+
     @Test
-    fun startButton(){
+    fun startButton() {
         run {
-            step("Нажатие старт"){
+            step("Нажатие старт") {
                 Onbording.continueButton.click()
                 Onbording.continueButton.click()
                 Onbording.continueButton.click()
@@ -82,11 +93,12 @@ class ExploreScreenTests : TestCase() {
             }
         }
     }
+
     @Test
-    fun addLanguage(){
-        run{
-            step("Нажатие Добавить язык"){
-                Onbording.items1.childAt<OnbordingFrameItem>(0){
+    fun addLanguage() {
+        run {
+            step("Нажатие Добавить язык") {
+                Onbording.items1.childAt<OnbordingFrameItem>(0) {
                     addButton.click()
                 }
             }

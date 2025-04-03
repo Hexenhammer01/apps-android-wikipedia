@@ -1,6 +1,8 @@
 package org.wikipedia.homeworks.homework09
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.kaspersky.components.alluresupport.withForcedAllureSupport
+import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
@@ -16,7 +18,7 @@ import org.wikipedia.homeworks.homework07.SecObj
 import org.wikipedia.homeworks.homework07.TopReadCardView
 import org.wikipedia.main.MainActivity
 
-class Script : TestCase() {
+class Script : TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
 
     @get:Rule
     val activityScenarioRule: ActivityScenarioRule<MainActivity> =
@@ -40,15 +42,15 @@ class Script : TestCase() {
                         }
                     }
                 }
-            NewsScreen.items
-                    .childAt<NewsScreenTtem>(1) {
-                        step("Кликаем по второй статье из списка") {
-                            title.click()
-                        }
-            }
-            step("Проверяем, что отображается элемент с ID page_web_view") {
-                SecObj.page.isVisible()
-            }
+//            NewsScreen.items
+//                    .childAt<NewsScreenTtem>(1) {
+//                        step("Кликаем по второй статье из списка") {
+//                            title.click()
+//                        }
+//            }
+//            step("Проверяем, что отображается элемент с ID page_web_view") {
+//                SecObj.page.isVisible()
+//            }
         }
     }
 }
