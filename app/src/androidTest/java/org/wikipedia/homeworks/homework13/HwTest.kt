@@ -10,6 +10,7 @@ import org.wikipedia.homeworks.homework03.OnboardingScreen
 import org.wikipedia.homeworks.homework07.ExploreScreen
 import org.wikipedia.homeworks.homework07.ListCardList
 import org.wikipedia.homeworks.homework07.TopReadCardView
+import org.wikipedia.homeworks.homework19.Steps
 import org.wikipedia.main.MainActivity
 
 class HwTest : TestCase() {
@@ -21,14 +22,18 @@ class HwTest : TestCase() {
     @Test
     fun simpleTest() {
         run {
-            step("Нажимает кнопку Skip") {
-                OnboardingScreen.skipButton.click()
+            val steps = Steps(this)
+            steps{
+                visibleButton(OnboardingScreen.skipButton,"Отображается кнопка")
+                click(OnboardingScreen.skipButton,"Кнопка Skip")
+
             }
+
 
             step("Проскроллить TopRead, перейти") {
                 ExploreScreen.items.childAt<TopReadCardView>(4) {
                     cardListContainerItems.childAt<ListCardList>(1) {
-                        viewListCardItemImage.click()
+                        steps.click(viewListCardItemImage,"Нажатие кнопки")
                     }
                 }
             }
@@ -62,8 +67,8 @@ class HwTest : TestCase() {
                     refId.hasText("5.")
                 }
             }
-            step("закрыть  окно") {
-                device.uiDevice.pressBack()
+            steps{
+                deviceMob(device,"Кнопка назад")
             }
         }
     }
