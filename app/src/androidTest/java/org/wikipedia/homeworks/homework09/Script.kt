@@ -16,6 +16,7 @@ import org.wikipedia.homeworks.homework07.NewsScreen
 import org.wikipedia.homeworks.homework07.NewsScreenTtem
 import org.wikipedia.homeworks.homework07.SecObj
 import org.wikipedia.homeworks.homework07.TopReadCardView
+import org.wikipedia.homeworks.homework21.CustomViewAction
 import org.wikipedia.main.MainActivity
 
 class Script : TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
@@ -29,7 +30,7 @@ class Script : TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
     fun script() {
         run {
             step("Нажимает кнопку Skip") {
-                OnboardingScreen.skipButton.click()
+                OnboardingScreen.skipButton.view.perform(CustomViewAction())
             }
                 items.childWith<NewsCardsView> {
                     withDescendant {
